@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "https://kedaikerepekmaksu-h5a4bgdpdue2cnge.southeastasia-01.azurewebsites.net")
 public class NotificationController {
 
     @Autowired
