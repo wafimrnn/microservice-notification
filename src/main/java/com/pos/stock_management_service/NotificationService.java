@@ -12,6 +12,7 @@ public class NotificationService {
 
     public List<Product> checkRestockNotifications() {
         // Fetch products that need restocking
+        System.out.println("Restock products: " + products);
         return productRepository.findProductsToRestock();
     }
 }
