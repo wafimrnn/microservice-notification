@@ -2,46 +2,49 @@ package com.pos.stock_management_service;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "PRODUCTS")  // Ensure the table name is correct
 public class Product {
+
     @Id
-    @Column(name = "PROD_ID") // Maps to the "PROD_ID" column in the database
-    private int id;
+    private Long PROD_ID;  // Ensure the field name matches the column name
 
-    @Column(name = "PROD_NAME") // Maps to the "PROD_NAME" column in the database
-    private String name;
-
-    @Column(name = "RESTOCK_LEVEL") // Maps to the "RESTOCK_LEVEL" column
+    private String prodName;
+    private int quantityStock;
     private int restockLevel;
 
-    @Column(name = "QUANTITY_STOCK") // Maps to the "QUANTITY_STOCK" column
-    private int quantityStock;
-
     // Getters and setters
-    public int getId() {
-        return id;
+    public Long getProdId() {
+        return PROD_ID;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setProdId(Long prodId) {
+        this.PROD_ID = prodId;
     }
-    public String getName() {
-        return name;
+
+    public String getProdName() {
+        return prodName;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    public void setProdName(String prodName) {
+        this.prodName = prodName;
     }
-    public int getRestockLevel() {
-        return restockLevel;
-    }
-    public void setRestockLevel(int restockLevel) {
-        this.restockLevel = restockLevel;
-    }
+
     public int getQuantityStock() {
         return quantityStock;
     }
+
     public void setQuantityStock(int quantityStock) {
         this.quantityStock = quantityStock;
+    }
+
+    public int getRestockLevel() {
+        return restockLevel;
+    }
+
+    public void setRestockLevel(int restockLevel) {
+        this.restockLevel = restockLevel;
     }
 }
